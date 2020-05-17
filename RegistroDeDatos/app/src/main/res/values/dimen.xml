@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="Etiquetas">18dp</dimen>
+    <dimen name="Titulo">40dp</dimen>
+    <dimen name="btnText">24dp</dimen>
+</resources>

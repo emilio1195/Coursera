@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="styleTitulo" parent="Theme.AppCompat.Light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/Titulo</item>
+        <item name="android:textColor">@color/ColorTitulo</item>
+    </style>
+    <style name="styleEtiqueta" parent="Theme.AppCompat.Light">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/Etiquetas</item>
+        <item name="android:textColor">@color/colorEtiquetas</item>
+    </style>
+    <style name="styleTexto" parent="Theme.AppCompat.Light">
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">@dimen/Etiquetas</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+    <style name="styleBoton" parent="Theme.AppCompat.Light">
+        <item name="android:textSize">@dimen/btnText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorBtn</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorPrimaryDark</item>
+    </style>
+
+</resources>

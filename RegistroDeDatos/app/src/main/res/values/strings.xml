@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RegistroDeDatos</string>
+    <string name="NombApe">Nombre y Apellido</string>
+    <string name="Fnacimiento">Fecha de Nacimiento</string>
+    <string name="Telf">Telefono</string>
+    <string name="Email">Email</string>
+    <string name="Descripcion">Descripción</string>
+    <string name="Titulo">REGISTRO DE DATOS</string>
+
+</resources>
