@@ -24,6 +24,7 @@ public class FavoritosPets extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         if (toolbar != null ){
             setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true); //se puede activar aqui o atraves del manifest
         recyclerView = (RecyclerView) findViewById(R.id.RVFavoritos);

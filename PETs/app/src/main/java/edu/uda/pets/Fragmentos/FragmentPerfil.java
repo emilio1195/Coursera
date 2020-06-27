@@ -5,13 +5,11 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
@@ -32,7 +30,7 @@ public class FragmentPerfil extends Fragment {
         View v = inflater.inflate(R.layout.fragment_fragment_perfil, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.RVperfil);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
-        gridLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        gridLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
         recyclerView.setLayoutManager(gridLayoutManager);
         addFotos();
         AdapterInit();
@@ -41,17 +39,14 @@ public class FragmentPerfil extends Fragment {
 
     private void addFotos(){
         ListFotosPerfil = new ArrayList<FotosPerfil>();
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata1,"235"));
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata2,"566"));
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata3,"244"));
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata4,"2222"));
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata5,"366"));
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata6,"878"));
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata7,"700"));
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata8,"1333"));
-        ListFotosPerfil.add(new FotosPerfil(R.drawable.kata9,"997"));
-
-
+        ListFotosPerfil.add(new FotosPerfil(R.drawable.katapri,"235"));
+        ListFotosPerfil.add(new FotosPerfil(R.drawable.katasec,"566"));
+        ListFotosPerfil.add(new FotosPerfil(R.drawable.katater,"244"));
+        ListFotosPerfil.add(new FotosPerfil(R.drawable.katacuar,"2222"));
+        ListFotosPerfil.add(new FotosPerfil(R.drawable.kataquin,"366"));
+        ListFotosPerfil.add(new FotosPerfil(R.drawable.katase,"878"));
+        ListFotosPerfil.add(new FotosPerfil(R.drawable.katasep,"700"));
+        ListFotosPerfil.add(new FotosPerfil(R.drawable.kataoct,"1333"));
     }
 
     private void AdapterInit(){

@@ -14,12 +14,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+
             android:fontFamily="@font/homelike"
             android:gravity="center_horizontal"
             android:text="@string/TittleMain"
@@ -29,20 +30,18 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center_horizontal|center_vertical"
             android:src="@drawable/iconopet" />
 
         <Button
             android:id="@+id/inicio"
             android:layout_width="200dp"
-            android:layout_height="80dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             android:background="@color/accent"
 
             android:fontFamily="@font/wasyekpu"
-            android:padding="10dp"
             android:textColor="@color/icons"
             android:text="Entrar"
             android:textSize="40dp" />
