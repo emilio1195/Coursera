@@ -1,30 +1,31 @@
 package edu.uda.pets;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.Adapter;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+
+import edu.uda.pets.Adapter.AdaptadorListaPets;
+import edu.uda.pets.POJO.DatosPets;
 
 public class FavoritosPets extends AppCompatActivity {
     private ArrayList<DatosPets> pilaPets;
     private RecyclerView recyclerView;
+    private Toolbar toolbar;
     ArrayList<DatosPets> lista = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favoritos_pets);
-        //getActionBar().setDisplayHomeAsUpEnabled(true);
-        Bundle bundle = new Bundle();
-        //recuperamos el bundle
-        bundle = getIntent().getBundleExtra("BundleLista");
-        //recuperamos la lista del bundle
-        lista = (ArrayList<DatosPets>) bundle.getSerializable("ListaPets");
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null ){
+            setSupportActionBar(toolbar);
+        }
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true); //se puede activar aqui o atraves del manifest
         recyclerView = (RecyclerView) findViewById(R.id.RVFavoritos);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);

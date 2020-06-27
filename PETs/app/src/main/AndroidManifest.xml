@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.uda.pets">
 
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FavoritosPets"
-            android:parentActivityName=".RecyclerViewPets">
+        <activity android:name=".Contacto" />
+        <activity android:name=".AcercaDe" />
+        <activity
+            android:name=".FavoritosPets"
+            android:parentActivityName=".WindowPets">
             <meta-data
                 android:name="android.support.PARENT_ACTION"
-                android:value=".RecyclerViewPets">
-            </meta-data>
+                android:value=".WindowPets" />
+
         </activity>
-        <activity android:name=".RecyclerViewPets"/>
-        <activity android:name=".MainActivity"
+        <activity android:name=".WindowPets" />
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
