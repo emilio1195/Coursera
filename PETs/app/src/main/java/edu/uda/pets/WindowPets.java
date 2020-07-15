@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import edu.uda.pets.Adapter.ViewPageAdapter;
 import edu.uda.pets.Fragmentos.FragmentPerfil;
 import edu.uda.pets.Fragmentos.FragmentRecyclerView;
+import edu.uda.pets.vista.favoritos.FavoritosPets;
 
 //En esta clase se instancian los Valores o datos de cada mascota
 public class WindowPets extends AppCompatActivity {
@@ -54,7 +55,7 @@ public class WindowPets extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.Favoritos:
-                Intent favoritosVentana = new Intent(WindowPets.this,FavoritosPets.class);
+                Intent favoritosVentana = new Intent(WindowPets.this, FavoritosPets.class);
                 startActivity(favoritosVentana);
                 return true;
             case R.id.mContacto:

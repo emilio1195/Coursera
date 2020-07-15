@@ -1,17 +1,22 @@
 package edu.uda.pets.Adapter;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import edu.uda.pets.BD.BaseDatosFavoritos;
+import edu.uda.pets.BD.ConstantesBD;
+import edu.uda.pets.BD.ConstructorFavoritos;
 import edu.uda.pets.POJO.DatosPets;
 import edu.uda.pets.R;
 
@@ -19,7 +24,7 @@ import edu.uda.pets.R;
 public class AdaptadorListaPets extends RecyclerView.Adapter<AdaptadorListaPets.PetsViewHolder> {
     private final Activity activity;
     ArrayList<DatosPets> ListaPets;
-
+    BaseDatosFavoritos dbF;
     public AdaptadorListaPets(ArrayList<DatosPets> listaPets, Activity activity) {
         ListaPets = listaPets;
         this.activity = activity;
@@ -30,9 +35,10 @@ public class AdaptadorListaPets extends RecyclerView.Adapter<AdaptadorListaPets.
         //Se encargara de crear la Vista y retornarla
         //Se utilizara el Inflate, el cual se encarga de construir el layout, es decir ir inflando nuestras vistas
         View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_pet,parent,false);
+        dbF= new BaseDatosFavoritos(activity);
         return new PetsViewHolder(vista); //se retorna este objeto con el fin de poder colocar el parametro y usar las vistas.
     }
-    public int posicion;
+    public int posicion, numFavoritos=0, numPulsos=0;
     @Override
     public void onBindViewHolder(@NonNull final PetsViewHolder datoPetViewHolder, int position) {
         posicion = position;
@@ -58,6 +64,12 @@ public class AdaptadorListaPets extends RecyclerView.Adapter<AdaptadorListaPets.
                     datosPets.setLike(true);
                     datosPets.setImgLike(R.drawable.like);
                     conteo = Integer.parseInt(datosPets.getCountLikes()) + 1;
+                    datosPets.setCountLikes(String.valueOf(conteo)); //se guarda el conteo en el obj
+                    //String queryNumFilas= "SELECT COUNT(*) FROM" + ConstantesBD.TABLE_MASCOTAS;
+                    ConstructorFavoritos constructorFavoritos = new ConstructorFavoritos(activity);
+                    //Toast.makeText(activity,"numFav: " + numFavoritos,Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(activity,"numPulsos: " + numPulsos,Toast.LENGTH_SHORT).show();
+                    constructorFavoritos.insertarFavorito(dbF, datosPets);
                 }
                 datosPets.setCountLikes(String.valueOf(conteo)); //se guarda el conteo en el obj
                 datoPetViewHolder.StateLike.setImageResource(datosPets.getImgLike());       ///se actualiza la ImagenLike con el estado actual

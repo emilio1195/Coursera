@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import edu.uda.pets.BD.ConstantesBD;
+import edu.uda.pets.BD.ConstructorFavoritos;
 import edu.uda.pets.POJO.DatosPets;
 import edu.uda.pets.R;
 
@@ -32,7 +34,7 @@ public class AdaptadorFavoritos extends RecyclerView.Adapter<AdaptadorFavoritos.
         View vista = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_pet,parent,false);
         return new PetsViewHolder(vista); //se retorna este objeto con el fin de poder colocar el parametro y usar las vistas.
     }
-    public int posicion;
+    public int posicion, code=0;
     @Override
     public void onBindViewHolder(@NonNull final PetsViewHolder datoPetViewHolder, int position) {
         posicion = position;
@@ -44,6 +46,7 @@ public class AdaptadorFavoritos extends RecyclerView.Adapter<AdaptadorFavoritos.
         datoPetViewHolder.raza.setText(datosPets.getRaza());
         datoPetViewHolder.contadorLikes.setText(datosPets.getCountLikes());
         datoPetViewHolder.StateLike.setImageResource(datosPets.getImgLike());
+
         // Toast.makeText(activity,"te Gusta: " + datosPets.getNombre() + ", N likes: " + datosPets.getCountLikes() + ", state Like:" + datosPets.isLike(),Toast.LENGTH_LONG).show();
     }
 

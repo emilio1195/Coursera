@@ -16,7 +16,7 @@
         <activity android:name=".Contacto" />
         <activity android:name=".AcercaDe" />
         <activity
-            android:name=".FavoritosPets"
+            android:name=".vista.favoritos.FavoritosPets"
             android:parentActivityName=".WindowPets">
             <meta-data
                 android:name="android.support.PARENT_ACTION"

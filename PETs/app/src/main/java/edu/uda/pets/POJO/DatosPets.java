@@ -16,6 +16,10 @@ public class DatosPets {
         this.imgLike = imgLike;
     }
 
+    public DatosPets() {
+
+    }
+
     public int getImgLike() {
         return imgLike;
     }
